@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@pinecone-database/pinecone": "^2.0.1",
+    "pdfjs": "^2.5.3",
+    "pdfjs-dist": "^4.0.379"
+  },
+  "devDependencies": {
+    "@types/pdfjs-dist": "^2.10.378"
+  }, 
+  "main": "source/server.ts",
+  "scripts": {
+      "dev": "nodemon source/server.ts",
+      "build": "rm -rf build/ && prettier --write source/ && tsc"
+  }
+  }
