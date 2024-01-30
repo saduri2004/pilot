@@ -7,6 +7,9 @@
       }
     ],
     "routes": [
-      { "handle": "vercel" }
+      {
+        "src": "/api/*",
+        "dest": "api/server.ts"
+      }
     ]
   }

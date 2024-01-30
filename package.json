@@ -7,23 +7,17 @@
   },
   "devDependencies": {
     "@types/pdfjs-dist": "^2.10.378",
+    "nodemon": "^3.0.3",
     "pre-commit": "^1.2.2",
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
   },
   "main": "source/server.ts",
-
   "scripts": {
     "start": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
+    "ts.check": "tsc --project ./pilot-ts-app/tsconfig.json",
     "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
-    }, 
-    "pre-commit": [
-      "ts.check",
-      "build",
-      "add-build"
-  ]
+  }
 }
-
-
