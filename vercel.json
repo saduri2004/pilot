@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.ts",
+        "use": "@now/npx"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/pilot-ts-app/api/(.*)",
+        "dest": "server.ts"
+      }
+    ]
+  }

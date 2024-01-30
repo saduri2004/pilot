@@ -5,14 +5,18 @@ import { Pinecone, PineconeRecord } from '@pinecone-database/pinecone';
 import { create } from 'domain';
 import { match } from 'assert';
 import express from 'express';
+require('dotenv').config();
+
+const openaiApiKey = process.env.REACT_APP_OPENAI_API_KEY;
+const pineconeKey = process.env.REACT_APP_PINECONE_API_KEY as string;
+
 
 const pc = new Pinecone({
-  apiKey: 'b56c7742-f821-429a-a6de-3303d9c7045b',
+  apiKey: pineconeKey,
 });
 
 const openai = new OpenAI({
-  apiKey: "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", 
-  dangerouslyAllowBrowser: true
+  apiKey: openaiApiKey, 
 });
 
 
@@ -174,7 +178,7 @@ const embedQuery = async (text: string) => {
 
 export const testFun = () => {
   console.log( "Test Passed");
-  
+
 }
 
 
