@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { testFun, getChatCompletionResponse } from '../src/App'; // Adjust the import path as needed
 
 const app = express();
-const port = 3000;
+
 
 
   // "scripts": {
@@ -10,7 +10,7 @@ const port = 3000;
   //   "build": "rm -rf build/ && prettier --write source/ && tsc"
   // }
 
-  
+
 app.use(express.json());
 
 app.get('/test', (req: Request, res: Response) => {
@@ -35,7 +35,11 @@ app.post('/chat-completion', async (req: Request, res: Response) => {
   }
 });
 
-app.listen(port, () => {
+const PORT = process.env.PORT || 5000;
+
+
+
+app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
