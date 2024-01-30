@@ -2,14 +2,11 @@
     "version": 2,
     "builds": [
       {
-        "src": "server.ts",
-        "use": "@now/npx"
+        "src": "api/server.ts",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
-      {
-        "src": "/pilot-ts-app/api/(.*)",
-        "dest": "server.ts"
-      }
+      { "handle": "vercel" }
     ]
   }

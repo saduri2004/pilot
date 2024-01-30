@@ -6,11 +6,24 @@
     "pdfjs-dist": "^4.0.379"
   },
   "devDependencies": {
-    "@types/pdfjs-dist": "^2.10.378"
+    "@types/pdfjs-dist": "^2.10.378",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5"
   },
   "main": "source/server.ts",
+
   "scripts": {
-    "dev": "nodemon source/server.ts",
-    "build": "rm -rf build/ && prettier --write source/ && tsc"
-  }
+    "start": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+    }, 
+    "pre-commit": [
+      "ts.check",
+      "build",
+      "add-build"
+  ]
 }
+
+

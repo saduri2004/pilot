@@ -4,6 +4,13 @@ import { testFun, getChatCompletionResponse } from '../src/App'; // Adjust the i
 const app = express();
 const port = 3000;
 
+
+  // "scripts": {
+  //   "dev": "nodemon source/server.ts",
+  //   "build": "rm -rf build/ && prettier --write source/ && tsc"
+  // }
+
+  
 app.use(express.json());
 
 app.get('/test', (req: Request, res: Response) => {
